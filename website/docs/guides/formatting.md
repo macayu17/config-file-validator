@@ -28,6 +28,11 @@ Formatting is available for 9 formats: JSON, JSONC, YAML, TOML, HCL, XML, INI, P
 
 All other formats supported by cfv (HOCON, CSV, KDL, etc.) are validation-only.
 
+`.json` files that contain comments or trailing commas — common in editor
+configuration such as `.vscode/settings.json` — are formatted as JSONC, so they
+are normalized rather than skipped. Comments are preserved; trailing commas are
+removed.
+
 ## What gets normalized
 
 - **Indentation** — consistent indent width across the file
